@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>cy-input-range</title>
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>cy-input-range</h1>
+    <label for="points">Points (between 0 and 10):</label>
+    <input type="range" id="points" name="points" min="0" max="10" value="0">
+    <br>
+    <br>
+    <label>Selected value: <span id="range-input-value"></span></label>
+    <script>
+      const pointsInput = document.getElementById('points')
+
+      pointsInput.addEventListener('change', event => {
+        const rangeInputValue = document.getElementById('range-input-value')
+        rangeInputValue.textContent = event.target.value
+        rangeInputValue.style.padding = '4px'
+        rangeInputValue.style.border = '2px solid blue'
+        rangeInputValue.style.fontWeight = '700'
+        rangeInputValue.style.color = 'blue'
+        rangeInputValue.style.backgroundColor = 'yellow'
+      }, false)
+    </script>
+  </body>
+</html>
